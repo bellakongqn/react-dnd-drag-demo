@@ -1,0 +1,21 @@
+.container{
+    height: 100vh;
+    background: darkolivegreen;
+    padding: 20px;
+    display: flex;
+    .drop-container{
+        width: 200px;
+        background: #ffffff;
+        margin: 10px;
+        flex-grow: 1;
+        padding: 10px;
+        .drag-item{
+            height: 30px;
+            line-height: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #ffffff;
+            background:sienna;
+        }
+    }
+}

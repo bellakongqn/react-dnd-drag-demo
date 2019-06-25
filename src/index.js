@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Drag from '../src/Drag/DragExample'
+import Drag from '../src/DragNew/DragDemo'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Drag />, document.getElementById('root'));
