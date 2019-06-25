@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  background-color: darkgoldenrod;
+  height: 100vh;
+}
+
+.container>div {
+  flex: 1;
+  margin: 30px;
+  border: 1px dashed burlywood;
+  background-color: lightblue;
+}
+
+.container>div>div {
+  height: 30px;
+  margin: 15px 10px;
+  border: 1px red solid;
+  background-color: #fff;
+  text-align: center;
+  color: #999999;
+  line-height: 30px;
+}
