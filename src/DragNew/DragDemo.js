@@ -29,7 +29,7 @@ const DragItem = props => {
 
 const DropContainer = props =>{
 
-    const [{isOver, canDrop}, drop] = useDrop({
+    const [{ canDrop}, drop] = useDrop({
         accept:itemTypes.LIST,
         drop:(item) =>{
             // 打印出放置的时候的item信息,需要获取拖拽元素的name
