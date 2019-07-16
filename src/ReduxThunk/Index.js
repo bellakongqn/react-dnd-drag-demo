@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {fetchPosts} from './Actions'
-
+ 
 class Index extends Component {
     constructor(props) {
         super(props)
@@ -16,6 +16,7 @@ class Index extends Component {
 
     render() {
         const {selectedSubreddit,posts } = this.props
+        console.log(posts)
         return (
             <div>
                 {selectedSubreddit}
@@ -23,6 +24,11 @@ class Index extends Component {
                     onClick={this.handleRefreshClick}>
                     Refresh
                     </a>
+                <ul>
+                    {posts.items.map(item => (
+                        <li key={item.id}>{item.data.name}</li>
+                    ))}
+                </ul>
             </div>
         );
     }

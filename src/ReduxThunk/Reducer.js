@@ -3,11 +3,6 @@ function selectedSubreddit(state = 'reactjs', action) {
   switch (action.type) {
   case "Select":
     return action.subreddit
-   case 'RECEIVE_POSTS':
-        return Object.assign({}, state, {
-          items: action.posts,
-          lastUpdated: action.receivedAt
-        })
   default:
     return state
   }
@@ -34,9 +29,9 @@ function posts(
     }
   }
 
-const rootReducer = combineReducers({
+const reducer = combineReducers({
     posts,
     selectedSubreddit
   })
   
-  export default rootReducer
+  export default reducer
