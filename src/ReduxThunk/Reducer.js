@@ -9,12 +9,7 @@ function selectedSubreddit(state = 'reactjs', action) {
 }
 
 
-function posts(
-    state = {
-      items: []
-    },
-    action
-  ) {
+function posts( state = {items: []} , action) {
     switch (action.type) {
       case 'REQUEST_POSTS':
         return Object.assign({}, state, {

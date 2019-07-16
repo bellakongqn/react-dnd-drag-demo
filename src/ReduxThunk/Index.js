@@ -1,27 +1,17 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux';
 import {fetchPosts} from './Actions'
  
 class Index extends Component {
-    constructor(props) {
-        super(props)
-        this.handleRefreshClick = this.handleRefreshClick.bind(this)
-      }
-    handleRefreshClick(e) {
-        e.preventDefault()
-    
-        const { dispatch, selectedSubreddit } = this.props
-        dispatch(fetchPosts(selectedSubreddit))
-      }
-
-    render() {
-        const {selectedSubreddit,posts } = this.props
+    render() {   
+        const {selectedSubreddit,posts,fetchPosts } = this.props
         console.log(posts)
         return (
             <div>
                 {selectedSubreddit}
                 <a href='#'
-                    onClick={this.handleRefreshClick}>
+                    onClick={()=>fetchPosts(selectedSubreddit)}>
                     Refresh
                     </a>
                 <ul>
@@ -41,5 +31,12 @@ function mapStateToProps(state){
     }
 }
 
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({
+        fetchPosts,
+        // ....其它action
+    },dispatch)
+}
 
-export default connect(mapStateToProps)(Index);
+
+export default connect(mapStateToProps,mapDispatchToProps)(Index);

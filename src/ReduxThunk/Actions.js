@@ -17,10 +17,3 @@ export function fetchPosts(subreddit) {
       receivedAt: Date.now()
     }
   }
-
-  function requestPosts(subreddit) {
-    return {
-      type:' REQUEST_POSTS',
-      subreddit
-    }
-  }
