@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route,Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route,Link,Switch } from 'react-router-dom';
 import Chat from './HigerOrderComponent/Chat';
 import DragDemo from './DragNew/DragDemo';
 import Facc from './Facc/Index';
@@ -46,8 +46,12 @@ class App extends Component {
               
             </ul>
             <div>
+              {/* 保证下面的route，即使有多个与路径匹配，也只有第一个会显示 */}
+            <Switch>
               <Route path="/chat" render={() => <Chat/>} />
+              {/* <Route path="/chat/" Component={Chat} /> */}
               <Route path="/drag" render={() => <DragDemo/>}/>
+              <Route path="/drag" render={() => <About/>}/>
               <Route path="/about" render={() => <About/>} />
               <Route path="/facc" render={() => <Facc/>}/>
               <Route path="/contextApi"  render={() => <ContextApi/>} />
@@ -55,6 +59,7 @@ class App extends Component {
               <Route path="/pureRedux" render={() => <PureRedux/>} />
               <Route path="/counter" render={() => <Counter/>}  />
               <Route path="/reduxThunk" render={() => <ReduxThunk/>}  />
+              </Switch>
             </div>
           </div>
         </Router>
