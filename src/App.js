@@ -29,16 +29,16 @@ class App extends Component {
                 <Link to="/contextApi">ContextApi</Link>
               </li>
               <li>
-                 <Link to="changeTheme">ChangeTheme</Link>
+                 <Link to="/changeTheme">ChangeTheme</Link>
               </li>
               <li>
-                <Link to="pureRedux">PureRedux</Link>
+                <Link to="/pureRedux">PureRedux</Link>
               </li>
               <li>
-                <Link to="counter">Counter</Link>
+                <Link to="/counter">Counter</Link>
               </li>
               <li>
-              <Link to="reduxThunk">ReduxThunk</Link>
+              <Link to="/reduxThunk">ReduxThunk</Link>
               </li>
                 
                 
